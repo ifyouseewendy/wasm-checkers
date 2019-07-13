@@ -42,8 +42,11 @@ Code[7]:
  - func[6] size=7
 ```
 
+### Run
+
+The wasm module has to be running on a host, which is wrapped in JavaScript in the code. Use `$ ruby -run -e httpd . -p 9090` to init a local server and visit http://localhost:9090/index.html
+
 ### Test
 
-The wasm module has to be running on a host, which is wrapped in JavaScript in the code. Use `$ ruby -run -e httpd . -p 9090` to init a local server and visit http://localhost:9090/func_test.html
-
+Duplicate `checkers.wat` to `func_test.wat` and compile.
 
