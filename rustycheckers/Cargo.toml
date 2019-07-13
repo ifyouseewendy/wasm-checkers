@@ -1,0 +1,12 @@
+[package]
+name = "rustycheckers"
+version = "0.1.0"
+authors = ["Di Wen <ifyouseewendy@gmail.com>"]
+
+[lib]
+crate-type = ["cdylib"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
