@@ -30,6 +30,10 @@ impl GameEngine {
                 self.board[x][y] = Some(GamePiece::new(PieceColor::Black));
             });
     }
+    pub fn get_piece(&self, coordinate: Coordinate) -> Result<Option<GamePiece>, ()> {
+        let Coordinate(x, y) = coordinate;
+        Ok(self.board[x][y])
+    }
     pub fn move_piece(&mut self, mv: &Move) -> Result<MoveResult, ()> {
         let legal_moves = self.legal_moves();
 
@@ -62,6 +66,9 @@ impl GameEngine {
             mv: mv.clone(),
             crowned,
         })
+    }
+    pub fn current_turn(&self) -> PieceColor {
+        self.current_turn
     }
     fn legal_moves(&self) -> Vec<Move> {
         let mut moves: Vec<Move> = Vec::new();
