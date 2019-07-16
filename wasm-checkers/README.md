@@ -1,4 +1,4 @@
-## WASM Checkers
+## Checkers (WASM version)
 
 Code example from Programming WebAssembly with Rust: using raw wat to write a checkers board game.
 
@@ -49,23 +49,3 @@ The wasm module has to be running on a host, which is wrapped in JavaScript in t
 ### Test
 
 Duplicate `checkers.wat` to `func_test.wat` and compile.
-
-### Rust version (rustycheckers)
-
-To compile
-
-```sh
-$ cd rustycheckers
-
-# Add wasm target to stable toolchain
-$ rustup target add wasm32-unknown-unknown --toolchain stable
-
-# Build release
-$ cargo build --release --target=wasm32-unknown-unknown
-
-# Move to demo folder
-$ cp target/wasm32-unknown-unknown/release/rustycheckers.wasm demo/
-```
-
-Run by visit http://localhost:9090/rustycheckers/demo/
-
