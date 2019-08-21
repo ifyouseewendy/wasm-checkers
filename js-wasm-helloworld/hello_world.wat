@@ -4,11 +4,13 @@
   )
   (import "js" "mem" (memory 1))
 
+  (; write to memory ;)
   (data (i32.const 0) "hello world!")
 
-  (func $hello
+  (; define and export run func ;)
+  (func $run
+    (; pass memory pointer to imported print function ;)
     (call $js_print (i32.const 0) (i32.const 12))
   )
-
-  (export "hello" (func $hello))
+  (export "run" (func $run))
 )

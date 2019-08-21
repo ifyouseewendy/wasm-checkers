@@ -6,7 +6,7 @@ function printStr(offset, length) {
   console.log(string);
 }
 
-fetch("./hello.wasm")
+fetch("./hello_world.wasm")
   .then(response => response.arrayBuffer())
   .then(
     bytes => WebAssembly.instantiate(bytes, {
@@ -15,4 +15,4 @@ fetch("./hello.wasm")
         mem: wasmMem,
       }
     })
-  ).then(result => result.instance.exports.hello());
+  ).then(result => result.instance.exports.run());
